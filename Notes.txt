@@ -26,14 +26,38 @@ concurrency friendly
         resource intensive
 
     Single-threaded
-        Event Loop
-        
+        Event Loop (scheduler)
+        not very resource intensive
+        logic implementation will become complex (unmaintainable)
+
+    Go uses 'goroutines'
+        just functions, but executed by a thread like infrastructure
+        1000s of goroutines executed in ONE SINGLE thread
+        language features to support goroutines
+            ex: go, select, chan etc
+
 Simplicity
     - 25 keywords
+    break, case, chan, const, continue,
+    default, defer, else, fallthrough, for,
+    func, go, goto, if, import,
+    interface, map, package, range, return,
+    select, struct, switch, type, var
+
+Missing in go
+    No function or operator overloading
+    No implicit conversions
+    No classes, type inheritance
+    No generics
+    No exceptions
+    No assertions
+    No immutable variables
+
 Functional Programming
 
 
 Event Driven Applications
+
 
 
 
@@ -56,3 +80,16 @@ while (!eof){
 declare avg = sum / count
 print avg
 close file
+
+go tools & runtime
+editor
+
+go program structure
+
+    package name
+    dependent package import statements
+    variables and constant declarations
+    init() function
+    main() function
+    rest of the functions
+
