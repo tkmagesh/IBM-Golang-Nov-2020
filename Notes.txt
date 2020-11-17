@@ -85,7 +85,6 @@ go tools & runtime
 editor
 
 go program structure
-
     package name
     dependent package import statements
     variables and constant declarations
@@ -93,3 +92,12 @@ go program structure
     main() function
     rest of the functions
 
+Types
+    Primitive Types
+        int, float, string, boolean
+        integers
+            int8, int16, int32, int64, uint8, uint16, uint32, uint64
+        float
+            float32, float64
+    Structured or Composite Types
+        struct, array, slice, map, channel & interface
