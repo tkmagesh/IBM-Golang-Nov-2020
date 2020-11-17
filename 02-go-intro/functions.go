@@ -4,8 +4,9 @@ import "fmt"
 
 func main(){
 	fmt.Println(add(100,200))
-	var result, remainder = divide(100, 7)
-	fmt.Printf("%v, %v\n", result, remainder)
+	var result, _ = divide(100, 7)
+	/* fmt.Printf("%v, %v\n", result, remainder) */
+	fmt.Printf("%v\n", result)
 }
 
 func add(x int, y int) (result int) {
