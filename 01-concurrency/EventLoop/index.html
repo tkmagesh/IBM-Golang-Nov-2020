@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Loop</title>
+    <script>
+        window.addEventListener('DOMContentLoaded', onDocumentLoad);
+        function onDocumentLoad(){
+            var btnDoWork = document.getElementById('btnDoWork');
+            btnDoWork.addEventListener('click',onBtnDoWorkClick);
+        }
+        function onBtnDoWorkClick(){
+            displayMessage('Work Started');
+            setTimeout(triggerWork); //making an entry into the event queue
+        }
+
+        function triggerWork(){
+            doWork();
+            displayMessage('Work Completed');
+        }
+
+        function displayMessage(msg){
+            var divMessage = document.getElementById('divMessages');
+            divMessages.innerHTML += msg + '<br/>';
+        }
+        function doWork(){
+            for(var i=0;i<50000;i++)
+                for(var j=0; j<5000; j++)
+                    for(var k=0; k<100;k++){
+
+                    }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <input type="button" value="Do Work" id="btnDoWork">
+    <div id="divMessages"></div>
+</body>
+</html>

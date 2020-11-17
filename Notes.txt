@@ -1,0 +1,58 @@
+Go Lang?
+    High Level Programming Language
+
+2007
+2009 - Released 
+By
+    Robert Griesemen
+    Rob Pike
+    Ken Thomson
+
+C
+C++
+Phython, Ruby
+1998 - Java
+1999 - .NET (C# & VB.NET)
+2008 - Node.js
+
+Closer to the Hardware (Like C)
+    C - Not developer friendly
+
+concurrency friendly
+    Multi-threaded
+        thread synchronization
+        dead-lock possibility
+        race conditions
+        resource intensive
+
+    Single-threaded
+        Event Loop
+        
+Simplicity
+    - 25 keywords
+Functional Programming
+
+
+Event Driven Applications
+
+
+
+employee.dat
+id,name,doj,salary,dob,address
+
+Problem
+    Write an application to calculate the average salary of all the employees
+
+declare count, sum
+open file
+while (!eof){
+    read line from file
+    parse the line
+    extract salary
+    sum += salary
+    ++count
+    read next line
+}
+declare avg = sum / count
+print avg
+close file
