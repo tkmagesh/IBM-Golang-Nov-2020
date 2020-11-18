@@ -106,3 +106,9 @@ Array
     numbered sequence of elements with fixed size of the same type
 
     var x [5]int
+
+Slice
+    Wrapper around an array
+    s[lo:hi] - elements between lo and hi-1
+    s[lo:lo] - empty
+    s[lo:lo+1] - one element
