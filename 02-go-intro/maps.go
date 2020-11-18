@@ -27,6 +27,18 @@ func main(){
 
 	//check if a key exists
 	//if ok is true the item exists, false otherwise
-	cap, ok := states["OD"]
-	fmt.Println(cap, ok)
+	/* 
+	capital, exists := states["OD"]
+	fmt.Println(capital, exists)  
+	*/
+	searchKey := "DL"
+	if _, exists := states[searchKey]; exists {
+		fmt.Println(searchKey, " exists")
+	} else {
+		fmt.Println(searchKey, " does not exist")
+	}
+
+	for key, value := range states {
+		fmt.Println(key, value)
+	}
 }
