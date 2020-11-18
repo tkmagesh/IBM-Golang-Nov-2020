@@ -39,10 +39,18 @@ func main(){
 	
 	/* shapes = append(shapes, &Rectangle{ x1 : 10, x2 : 20, y1 : 20 , y2 : 40 }) */
 
-	/* rectangles := []*Rectangle{
+	shapes := []Shape{}
+
+	rectangles := []*Rectangle{
 		&Rectangle{ x1 : 10, x2 : 20, y1 : 20 , y2 : 40 },
 		&Rectangle{ x1 : 10, x2 : 20, y1 : 20 , y2 : 40 },
-	} */
+	}
+
+	//this works
+	shapes = append(shapes, rectangles[0], rectangles[1])
+
+	//this doesnt work.. fix this
+	//shapes = append(shapes, rectangles...)
 	
 	/*
 	circles := []*Circle{ 
@@ -57,7 +65,7 @@ func main(){
 		&Triangle{x : 10, y : 20, z : 30},
 	} */
 
-	shapes := []Shape{
+	/* shapes := []Shape{
 		&Rectangle{ x1 : 10, x2 : 20, y1 : 20 , y2 : 40 },
 		&Rectangle{ x1 : 10, x2 : 20, y1 : 20 , y2 : 40 },
 		&Circle{x : 10, y : 20, r : 10 },
@@ -66,7 +74,7 @@ func main(){
 		&Triangle{x : 10, y : 20, z : 30},
 		&Triangle{x : 10, y : 20, z : 30},
 		&Triangle{x : 10, y : 20, z : 30},
-	}
+	} */
 	fmt.Println(sumOfAreas(shapes))
 	
 }
