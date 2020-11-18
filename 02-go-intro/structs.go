@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-//import "./Employee"
+
 
 /* type Employee struct {
 	id int
