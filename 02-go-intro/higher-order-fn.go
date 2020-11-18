@@ -34,4 +34,6 @@ func main(){
 	fmt.Println(nextEvenNumber())
 	fmt.Println(nextEvenNumber())
 	fmt.Println(nextEvenNumber())
+
+	fn := evenNoGenerator() // fn will have its own "no" instance
 }
