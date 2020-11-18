@@ -115,3 +115,10 @@ Slice
 
 Map
     collection of key/value pairs
+
+
+Support for higher order functions
+    ability to treat functions like data
+        - assign them to variables
+        - pass them as arguments to functions
+        - return them as return value from functions
