@@ -31,8 +31,6 @@ func main(){
 	nos = append(nos, nos1...)
 	nos = append(nos, nos2...) 
 	
-	
-
 	fmt.Printf("%v\n",nos)
 
 	newNos := nos[1 : 4]
@@ -43,4 +41,19 @@ func main(){
 
 	fmt.Printf("%v\n", nos[2:])
 	fmt.Printf("%v\n", nos[:4])
+
+	for idx, value := range nos {
+		fmt.Println(value)
+		if idx == 4 {
+			continue
+		}
+	}
+
+	var dummy []int
+	dummy = append(dummy, 10,20,30 )
+
+	//dummy := []int{}
+	if dummy == nil {
+		fmt.Println("dummy is empty")
+	}
 }

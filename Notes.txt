@@ -112,3 +112,6 @@ Slice
     s[lo:hi] - elements between lo and hi-1
     s[lo:lo] - empty
     s[lo:lo+1] - one element
+
+Map
+    collection of key/value pairs
