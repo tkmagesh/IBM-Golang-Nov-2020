@@ -150,3 +150,19 @@ Create a folder '03-modularity'
 
     in the 'src' folder
         run the command 'go mod init modularity' in the terminal
+
+Modules Exercise
+    productsModule  -----> GOPATH
+        src
+            productsApp
+                go.mod
+                main.go
+            productUtils
+                go.mod
+                productsFilter.go
+
+Concurrency
+    go routines
+        lightweight
+        1000s of goroutines can be run in one single thread
+    language feature
