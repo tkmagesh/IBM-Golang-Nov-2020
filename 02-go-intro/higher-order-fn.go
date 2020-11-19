@@ -33,9 +33,19 @@ import "fmt"
  }
 
 func filterCostlyProducts(products []*Product) []*Product {
-	/* fill in the blanks */
+	//product.cost >= 50
 }
 
+func filterUnderstockedProducts(products []*Product) []*Product {
+	//product.units = 40 
+}
+
+func print(products []*Product){
+	for _, product := range products {
+		fmt.Println(product.id, product.name, product.cost, product.units)
+	}
+	return
+}
 
 func main(){
 	/* addWith100 := adder(100)
@@ -58,9 +68,7 @@ func main(){
 		&Product{ id:9, name: "Mouse", cost:100, units:10},
 	}
 
-	for _, product := range products {
-		fmt.Println(product.id, product.name, product.cost, product.units)
-	}
+	print(products)
 
 	
 }
