@@ -69,8 +69,14 @@ func filterUnderStockedProducts(products []*Product) []*Product {
 }
 
 func print(products []*Product){
-	for _, product := range products {
+	forEach(products, func(product *Product){
 		fmt.Println(product.id, product.name, product.cost, product.units)
+	});
+}
+
+func forEach (products []*Product, action func(p *Product)){
+	for _, product := range products {
+		action(product)
 	}
 	return
 }
@@ -78,6 +84,18 @@ func print(products []*Product){
 func negate(predicate Predicate) Predicate {
 	return func(p *Product) bool {
 		return !predicate(p)
+	}
+}
+
+func or(predicate1 Predicate, predicate2 Predicate) Predicate {
+	return func(p *Product) bool {
+		return predicate1(p) || predicate2(p)
+	}
+}
+
+func and(predicate1 Predicate, predicate2 Predicate) Predicate {
+	return func(p *Product) bool {
+		return predicate1(p) && predicate2(p)
 	}
 }
 
@@ -143,6 +161,8 @@ func main(){
 	cheaperProducts := filterProducts(products, cheaperProductPredicate)
 	print(cheaperProducts)
 	
+	cheaperAndWellStockedPredicate = and(cheaperProductPredicate, wellStockedProductsPredicate)
+
 	
 	
 }
