@@ -122,3 +122,31 @@ Support for higher order functions
         - assign them to variables
         - pass them as arguments to functions
         - return them as return value from functions
+
+Modules
+    - packages
+        - files
+
+
+crypto
+    /hash
+    /RSA256
+
+
+file1.go
+    package util
+file2.go
+    package util
+
+Create a folder '03-modularity'
+    cd to the folder
+    
+    Make sure GOPATH is set to the '03-modularity' folder
+
+    Create the following folders
+    /pkg
+    /src
+    /bin
+
+    in the 'src' folder
+        run the command 'go mod init modularity' in the terminal
