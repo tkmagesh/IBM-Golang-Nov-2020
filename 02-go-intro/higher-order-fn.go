@@ -44,6 +44,8 @@ import "fmt"
 	return result; 
  }
 
+ 
+
 func filterCostlyProducts(products []*Product) []*Product { 
 	//product.cost >= 50 
 	var result = []*Product{} 
@@ -73,6 +75,12 @@ func print(products []*Product){
 	return
 }
 
+func negate(predicate Predicate) Predicate {
+	return func(p *Product) bool {
+		return !predicate(p)
+	}
+}
+
 func main(){
 	/* addWith100 := adder(100)
 	fmt.Println(addWith100(200)) */
@@ -93,18 +101,48 @@ func main(){
 		&Product{ id:6, name: "Scribble Pad", cost:30, units:40},
 		&Product{ id:9, name: "Mouse", cost:100, units:10},
 	}
-
+	fmt.Println("Products")
 	print(products)
-	fmt.Println("Costly products [cost >= 50]")
-	costlyProducts := filterProducts(products, func(p *Product) bool{
-		return p.cost >= 50
-	})
-	print(costlyProducts)
+	fmt.Println();
 
 	fmt.Println("Under stocked products [units < 40]")
-	underStockedProducts := filterProducts(products, func(p *Product) bool{
+	underStockedProductsPredicate := func(p *Product) bool{
 		return p.units < 40
-	})
+	}
+	underStockedProducts := filterProducts(products, underStockedProductsPredicate)
 	print(underStockedProducts)
+	fmt.Println()
+
+	fmt.Println("Well stocked products [!understocked]")
+	/* 
+	wellStockedProductsPredicate := func(p *Product) bool{
+		return !underStockedProductsPredicate(p);
+	} 
+	*/
+	wellStockedProductsPredicate := negate(underStockedProductsPredicate)
+	wellStockedProducts := filterProducts(products, wellStockedProductsPredicate)
+	print(wellStockedProducts)
+	fmt.Println()
+
+
+	fmt.Println("Costly products [cost >= 50]")
+	costlyProductPredicate := func(p *Product) bool{
+		return p.cost >= 50
+	}
+	costlyProducts := filterProducts(products, costlyProductPredicate)
+	print(costlyProducts)
+	
+	fmt.Println()
+	fmt.Println("Cheaper Products [!costly]")
+	/* 
+	cheaperProductPredicate := func(p *Product) bool{
+		return !costlyProductPredicate(p)
+	}; 
+	*/
+	cheaperProductPredicate := negate(costlyProductPredicate)
+	cheaperProducts := filterProducts(products, cheaperProductPredicate)
+	print(cheaperProducts)
+	
+	
 	
 }
