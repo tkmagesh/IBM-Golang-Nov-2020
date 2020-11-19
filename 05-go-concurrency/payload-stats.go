@@ -12,6 +12,7 @@ type PageSize struct {
 }
 
 func getPayload(url string, results chan PageSize){
+	fmt.Println("initiating call for ", url)
 	res, err := http.Get(url)
 	if  err != nil {
 		panic(err)
@@ -46,6 +47,7 @@ func main(){
 	var biggest PageSize
 
 	for range urls {
+		fmt.Println("reading from results")
 		result := <- results
 		if (result.Size > biggest.Size) {
 			biggest = result
