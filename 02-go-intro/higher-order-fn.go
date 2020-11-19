@@ -32,12 +32,38 @@ import "fmt"
 	 units int
  }
 
-func filterCostlyProducts(products []*Product) []*Product {
-	//product.cost >= 50
-}
+ type Predicate func(p *Product) bool
 
-func filterUnderstockedProducts(products []*Product) []*Product {
-	//product.units = 40 
+ func filterProducts(products []*Product, predicate Predicate) []*Product {
+	var result = []*Product{} 
+	for _, product := range products {
+		if predicate(product) { 
+			result = append(result, product) 
+		} 
+	}
+	return result; 
+ }
+
+func filterCostlyProducts(products []*Product) []*Product { 
+	//product.cost >= 50 
+	var result = []*Product{} 
+	for _, product := range products {
+		if product.cost >= 50 { 
+			result = append(result, product) 
+		} 
+	}
+	return result; 
+} 
+
+func filterUnderStockedProducts(products []*Product) []*Product { 
+	//product.units < 40 
+	var result = []*Product{} 
+	for _, product := range products {
+		if product.units < 40 { 
+			result = append(result, product) 
+		} 
+	} 
+	return result;
 }
 
 func print(products []*Product){
@@ -69,6 +95,16 @@ func main(){
 	}
 
 	print(products)
+	fmt.Println("Costly products [cost >= 50]")
+	costlyProducts := filterProducts(products, func(p *Product) bool{
+		return p.cost >= 50
+	})
+	print(costlyProducts)
 
+	fmt.Println("Under stocked products [units < 40]")
+	underStockedProducts := filterProducts(products, func(p *Product) bool{
+		return p.units < 40
+	})
+	print(underStockedProducts)
 	
 }
