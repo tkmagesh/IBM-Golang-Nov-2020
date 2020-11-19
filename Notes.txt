@@ -166,3 +166,8 @@ Concurrency
         lightweight
         1000s of goroutines can be run in one single thread
     language feature
+
+    ch <- v     //send v to channel ch
+    v := <-ch  //receive v from channel
+
+    ch := make(chan int)
