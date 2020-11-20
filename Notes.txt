@@ -187,3 +187,12 @@ verion-1
     run the server
     hit http://localhost:8080/add -> to create a short verson of a long url
         => respond with the short url
+
+Version-2
+    Persisting the data in the file (gob)
+
+Version-3
+    Making the persistence logic async using goroutines and channels
+
+Version-4
+    replacing gob with json
