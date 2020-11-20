@@ -183,3 +183,7 @@ goto-app
 
 verion-1
     In memory data store
+
+    run the server
+    hit http://localhost:8080/add -> to create a short verson of a long url
+        => respond with the short url
