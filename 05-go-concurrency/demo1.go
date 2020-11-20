@@ -22,6 +22,7 @@ func main(){
 	go say("World", c2, c1)
 	
 	c1 <- -1
+	
 	var input string
     fmt.Scanln(&input)
 }
