@@ -20,8 +20,10 @@ var store Store
 func main() {
 	flag.Parse()
 	if *masterAddr != "" {
+		//the process is a slave process
 		store = NewProxyStore(*masterAddr)
 	} else {
+		//this process is a master process
 		store = NewURLStore(*dataFile)
 	}
 	if *rpcEnabled { // the master is the rpc server:
