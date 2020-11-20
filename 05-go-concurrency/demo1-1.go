@@ -7,10 +7,8 @@ import (
 )
 
 var data string 
-
 var mutex = &sync.Mutex{}
 
-		
 func say(str string){ 
 	for { 
 		if data != str { 
