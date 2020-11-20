@@ -173,3 +173,13 @@ Concurrency
     ch := make(chan int)
 
 Mutex
+
+goto-app 
+    URL shortner application
+        web interface to submit the long url
+        generate short verion of the given url
+        persisted
+        when the short url is requested, redirect the user to the original (long) URL
+
+verion-1
+    In memory data store
